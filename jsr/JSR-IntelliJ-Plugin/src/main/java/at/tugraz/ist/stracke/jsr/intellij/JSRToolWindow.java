@@ -27,6 +27,7 @@ import com.intellij.psi.impl.JavaPsiFacadeEx;
 import com.intellij.psi.impl.JavaPsiFacadeImpl;
 import com.intellij.ui.AnimatedIcon;
 import com.intellij.ui.CollectionListModel;
+import org.codehaus.groovy.syntax.Reduction;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -347,6 +348,10 @@ public class JSRToolWindow {
       this.state.reductionAlgorithm = ReductionAlgorithm.GENETIC;
     } else if(rb.getString("alg.del").equals(selAlgoItemTxt)) {
       this.state.reductionAlgorithm = ReductionAlgorithm.DELAYED_GREEDY;
+    } else if(rb.getString("alg.ge").equals(selAlgoItemTxt))  {
+      this.state.reductionAlgorithm = ReductionAlgorithm.GE_HEURISTIC;
+    } else if(rb.getString("alg.gre").equals(selAlgoItemTxt)){
+      this.state.reductionAlgorithm = ReductionAlgorithm.GRE_HEURISTIC;
     } else {
       this.state.reductionAlgorithm = ReductionAlgorithm.GREEDY_HGS;
     }
@@ -394,6 +399,12 @@ public class JSRToolWindow {
         break;
       case DELAYED_GREEDY:
         redAlgoItem = rb.getString("alg.del");
+        break;
+      case  GE_HEURISTIC:
+        redAlgoItem = rb.getString("alg.ge");
+        break;
+      case GRE_HEURISTIC:
+        redAlgoItem = rb.getString("alg.gre");
         break;
       case GREEDY_HGS:
       default:
@@ -490,7 +501,7 @@ public class JSRToolWindow {
     tfOutputPath.addBrowseFolderListener(new TextBrowseFolderListener(chooseFolderDescriptor));
     tfSerialPath.addBrowseFolderListener(new TextBrowseFolderListener(chooseFolderDescriptor));
   }
-
+  // TODO: HERE EXPAND AND ADD MORE OPTIONS
   private void initComboBoxes() {
     ResourceBundle rb = ResourceBundle.getBundle("i18n/en");
     List<String> covMetricItems = Arrays.asList(
@@ -502,8 +513,10 @@ public class JSRToolWindow {
     List<String> algorithmItems = Arrays.asList(
       rb.getString("alg.hgs"),
       rb.getString("alg.del"),
-      rb.getString("alg.gen")
-    );
+      rb.getString("alg.gen"),
+      rb.getString("alg.ge"),
+      rb.getString("alg.gre")
+      );
 
     cbCovMetric = new ComboBox<>(covMetricItems.toArray(new String[0]));
     cbReductionAlg = new ComboBox<>(algorithmItems.toArray(new String[0]));

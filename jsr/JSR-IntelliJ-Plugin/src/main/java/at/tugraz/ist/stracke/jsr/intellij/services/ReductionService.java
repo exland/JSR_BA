@@ -79,7 +79,7 @@ public class ReductionService {
     if (deactivateTCs && strPathOutput != null && !strPathSerialOut.isEmpty() && !strPathSerialOut.isBlank()) {
       builder.applyModificationsAsCopy(pathSerialOutput);
     }
-
+    // TODO: HERE EXPAND THE NEW AGORITHM
     switch (reductionAlgorithm) {
       case DELAYED_GREEDY:
         builder.reductionStrategy(new DelayedGreedyReductionStrategy());
