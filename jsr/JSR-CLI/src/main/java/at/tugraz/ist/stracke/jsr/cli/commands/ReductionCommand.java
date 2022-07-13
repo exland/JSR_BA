@@ -115,7 +115,9 @@ public class ReductionCommand implements Callable<Integer> {
                           "\r\n  Available options: " +
                           AlgorithmCandidates.ALG_GREEDY_HGS + ", " +
                           AlgorithmCandidates.ALG_DELAYED_GREEDY + ", " +
-                          AlgorithmCandidates.ALG_GENETIC)
+                          AlgorithmCandidates.ALG_GENETIC + ", " +
+                          AlgorithmCandidates.ALG_GE + ", " +
+                          AlgorithmCandidates.ALG_GRE)
     private String algorithm;
 
     @Option(names = {"--zeroCoverage", "--zero"},

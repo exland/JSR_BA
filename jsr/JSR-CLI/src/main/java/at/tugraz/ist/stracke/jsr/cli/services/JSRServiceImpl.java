@@ -61,6 +61,8 @@ public class JSRServiceImpl implements TSRService, SFLService, CoverageService {
       case AlgorithmCandidates.ALG_DELAYED_GREEDY:
         builder.reductionStrategy(new DelayedGreedyReductionStrategy());
         break;
+      case AlgorithmCandidates.ALG_GE:
+      case AlgorithmCandidates.ALG_GRE:
       // No default case necessary, as the FacadeBuilder defaults
       // to the greedy HGS algorithm
     }
