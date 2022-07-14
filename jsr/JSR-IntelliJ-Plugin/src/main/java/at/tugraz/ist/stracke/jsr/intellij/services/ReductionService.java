@@ -8,6 +8,7 @@ import at.tugraz.ist.stracke.jsr.core.facade.JSRFacade;
 import at.tugraz.ist.stracke.jsr.core.facade.JUnitJSRFacadeBuilder;
 import at.tugraz.ist.stracke.jsr.core.tsr.ReducedTestSuite;
 import at.tugraz.ist.stracke.jsr.core.tsr.strategies.DelayedGreedyReductionStrategy;
+import at.tugraz.ist.stracke.jsr.core.tsr.strategies.GeHeuristic;
 import at.tugraz.ist.stracke.jsr.core.tsr.strategies.GeneticReductionStrategy;
 import at.tugraz.ist.stracke.jsr.intellij.misc.CoverageMetric;
 import at.tugraz.ist.stracke.jsr.intellij.misc.ReductionAlgorithm;
@@ -87,6 +88,8 @@ public class ReductionService {
       case GENETIC:
         builder.reductionStrategy(new GeneticReductionStrategy());
         break;
+      case GE_HEURISTIC:
+        builder.reductionStrategy(new GeHeuristic());
       // In the default case we don't have to do anything, as
       // the builder uses the greedy HGS algo as default RS.
     }

@@ -24,6 +24,7 @@ import at.tugraz.ist.stracke.jsr.core.slicing.strategies.Slicer4JSlicingStrategy
 import at.tugraz.ist.stracke.jsr.core.slicing.strategies.SlicingStrategy;
 import at.tugraz.ist.stracke.jsr.core.tsr.ReducedTestSuite;
 import at.tugraz.ist.stracke.jsr.core.tsr.strategies.DelayedGreedyReductionStrategy;
+import at.tugraz.ist.stracke.jsr.core.tsr.strategies.GeHeuristic;
 import at.tugraz.ist.stracke.jsr.core.tsr.strategies.GeneticReductionStrategy;
 
 import java.io.File;
@@ -62,6 +63,7 @@ public class JSRServiceImpl implements TSRService, SFLService, CoverageService {
         builder.reductionStrategy(new DelayedGreedyReductionStrategy());
         break;
       case AlgorithmCandidates.ALG_GE:
+        builder.reductionStrategy(new GeHeuristic());
       case AlgorithmCandidates.ALG_GRE:
       // No default case necessary, as the FacadeBuilder defaults
       // to the greedy HGS algorithm

@@ -97,7 +97,7 @@ public class GeneticReductionStrategy extends BaseReductionStrategy {
 
     retainedTCs.forEach(tc -> logger.debug("Keeping {}", tc.getName()));
     final List<TestCase> removedTCs = super.getRemovedTCs(retainedTCs);
-
+    logger.fatal(table);
     return new ReducedTestSuite(retainedTCs, removedTCs);
   }
 

@@ -53,6 +53,7 @@ public class GreedyIHGSReductionStrategy extends GreedyHGSReductionStrategy {
       this.table.put(tcToKeep, r, false);
       this.getTestCasesSatisfyingRequirement(r).forEach(tc -> this.table.put(tc, r, false));
     });
+    logger.fatal(table);
   }
 
   @Override

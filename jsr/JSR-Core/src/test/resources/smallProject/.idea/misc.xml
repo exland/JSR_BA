@@ -6,18 +6,17 @@
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
   <component name="jsrConfig">
-    <option name="pathTestSources" value="$PROJECT_DIR$/src/test/java" />
-    <option name="pathSources" value="$PROJECT_DIR$/src/main/java" />
-    <option name="pathJar" value="$PROJECT_DIR$/build/libs/testJar.jar" />
-    <option name="pathClasses" value="$PROJECT_DIR$/build/classes/java/main" />
+    <option name="pathTestSources" value="$PROJECT_DIR$/../Paper/src/test/java" />
+    <option name="pathSources" value="$PROJECT_DIR$/../Paper/src/main/java" />
+    <option name="pathJar" value="$PROJECT_DIR$/../Paper/build/libs/testJar.jar" />
+    <option name="pathClasses" value="$PROJECT_DIR$/../Paper/src/main/java" />
     <option name="pathSlicer" value="$PROJECT_DIR$/../../../../../../slicer/Slicer4J" />
     <option name="pathOutput" value="$PROJECT_DIR$/build/jsr/pluginTest01" />
     <option name="pathSerialOut" value="$PROJECT_DIR$/build/jsr/pluginTest01/gen" />
     <option name="basePackage" value="at.tugraz" />
     <option name="coverageMetric" value="LINE_COVERAGE" />
-    <option name="reductionAlgorithm" value="DELAYED_GREEDY" />
-    <option name="paramsExpanded" value="true" />
-    <option name="resultsExpanded" value="true" />
+    <option name="reductionAlgorithm" value="GENETIC" />
+    <option name="settingsExpanded" value="true" />
     <option name="keepZeroCoverageTCs" value="true" />
   </component>
 </project>

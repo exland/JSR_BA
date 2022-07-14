@@ -31,6 +31,7 @@ public class JUnitJSRFacade implements JSRFacade {
     this.config = config;
   }
 
+  // TODO HERE is something important
   @Override
   public ReducedTestSuite reduceTestSuite() {
 
@@ -99,18 +100,17 @@ public class JUnitJSRFacade implements JSRFacade {
     serializer.setReducedTestSuite(reducedTestSuite)
               .serialize(true);
   }
-
+   // TODO [TIM] Here the coverage report and testsuite is added.
   private ReducedTestSuite reduceTestSuite(TestSuite originalTestSuite, CoverageReport report) {
     ReductionStrategy reductionStrategy = this.config.reductionStrategy;
     reductionStrategy.setOriginalTestSuite(originalTestSuite);
     reductionStrategy.setCoverageReport(report);
-
     if (this.config.keepZeroCoverageTCs) {
       reductionStrategy.keepZeroCoverageTCs(true);
     }
 
     TestSuiteReducer reducer = this.config.reducer;
-
+    // TODO [TIM] here does the reduction happen
     reducer.reduce();
     if (this.config.staticTSRReportName != null) {
       reducer.generateReport(this.config.outputDir, this.config.staticTSRReportName);
