@@ -1,4 +1,6 @@
 rootProject.name = 'jsr'
 include 'JSR-Core', 'JSR-CLI'
 include 'JSR-IntelliJ-Plugin'
+include 'JSR-Core:src:test:resources:MasterExample'
+findProject(':JSR-Core:src:test:resources:MasterExample')?.name = 'MasterExample'
 
